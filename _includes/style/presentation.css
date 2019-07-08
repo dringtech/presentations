@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700,400i,700i');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 
-body {
+.remark-slide-container {
   font-family: 'IBM Plex Sans';
   font-size: 36pt;
+}
+
+.remark-notes-area {
+  font-family: 'IBM Plex Sans';
 }
 
 .remark-slide-content {
   color: hsl(120, 50%, 40%);
   background-color: hsl(60, 50%, 80%);
   font-size: 1em;
+  padding: 1em 2em 1em 2em;
 }
 
 .impact {
@@ -46,3 +51,9 @@ body {
 .cc-citation .icons { display: inline-block;white-space: none;opacity: .7;margin-top: 2px;margin-left: 3px;height: 22px !important; vertical-align: middle; }
 
 .centred { text-align: center; }
+
+a { color: hsl(120, 80%, 40%); }
+.impact a { color: hsl(60, 80%, 80%); }
+.baseline img { vertical-align: middle; }
+
+.img-50 img { width: 50%; }

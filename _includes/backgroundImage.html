@@ -1,2 +1,2 @@
-background-image: linear-gradient(hsla(0, 0%, 20%, 0.5), hsla(0, 0%, 5%, 0.5)), url('{{ include.image | relative_url }}')
+background-image: {% if include.mask %}linear-gradient(hsla(0, 0%, 20%, 0.5), hsla(0, 0%, 5%, 0.5)),{% endif %} url('{{ include.image | relative_url }}')
 background-size: cover
