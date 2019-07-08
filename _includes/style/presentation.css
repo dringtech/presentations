@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700,400i,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+
+body {
+  font-family: 'IBM Plex Sans';
+  font-size: 36pt;
+}
+
+.remark-slide-content {
+  color: hsl(120, 50%, 40%);
+  background-color: hsl(60, 50%, 80%);
+  font-size: 1em;
+}
+
+.impact {
+  color: hsl(60, 50%, 80%);
+  background-color: hsl(120, 50%, 40%);
+}
+.impact h1 { font-size: 3em; }
+.impact h2 { font-size: 2em; }
+.impact .remark-inline-code { color: inherit; }
+.remark-code, .remark-inline-code { font-family: 'IBM Plex Mono';}
+.remark-code { font-size: 0.6em; }
+.remark-inline-code { color: hsl(120, 50%, 30%); font-size: 0.95em; }
+.remark-slide-number { font-size: 1rem; }
+.question::before, .answer::before { padding-right: 1em; font-style: italic;  }
+.question::before{ content: 'Q:'; }
+.answer::before{ content: 'A: '; }
+.large { font-size: 1.5em; }
+.larger { font-size: 1.1em; }
+.smaller { font-size: 0.9em; }
+.small { font-size: 0.6em; }
+.full-width { width: 100% }
+.half-col { width: 50%; float: left; }
+.full-col { width: 100%; float: left; }
+.end-cols { clear: both }
+.inline-image img { height: 1em; vertical-align: middle; }
+.cc-citation {
+  font-size: 0.9rem;
+  font-style: italic;
+  position: absolute;
+  bottom: 0;
+}
+.impact .cc-citation a, .impact .cc-citation a:visited { color: hsl(60, 100%, 80%); }
+.cc-citation img { height: inherit;	margin-right: 3px; display: inline-block; }
+.cc-citation .icons { display: inline-block;white-space: none;opacity: .7;margin-top: 2px;margin-left: 3px;height: 22px !important; vertical-align: middle; }
+
+.centred { text-align: center; }
