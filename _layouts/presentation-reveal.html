@@ -1,0 +1,38 @@
+---
+layout: default
+reveal:
+  theme: blood
+  path: /vendor/reveal.js/
+---
+
+{% assign reveal_path = layout.reveal.path | relative_url %}
+
+<div class="reveal">
+  <div class="slides">
+    {{ content }}
+  </div>
+</div>
+<script src="{{ 'js/reveal.js' | prepend: reveal_path }}"></script>
+<!-- <script src="{{ 'plugin/markdown/marked.js' | prepend: reveal_path }}"></script>
+<script src="{{ 'plugin/markdown/markdown.js' | prepend: reveal_path }}"></script> -->
+<script>
+  Reveal.initialize({
+    dependencies: [
+      // Interpret Markdown in <section> elements
+      { src: '{{ 'plugin/markdown/marked.js' | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '{{ 'plugin/markdown/markdown.js' | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: '{{ 'plugin/highlight/highlight.js' | prepend: reveal_path }}', async: true },
+
+      // Zoom in and out with Alt+click
+      { src: '{{ 'plugin/zoom-js/zoom.js' | prepend: reveal_path }}', async: true },
+
+      // Speaker notes
+      { src: '{{ 'plugin/notes/notes.js' | prepend: reveal_path }}', async: true },
+
+      // MathJax
+      { src: '{{ 'plugin/math/math.js' | prepend: reveal_path }}', async: true }
+    ]
+  });
+</script>
