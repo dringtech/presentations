@@ -5,7 +5,7 @@ layout: default
 {{ content }}
 </textarea>
 
-<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+<script src="{{ '/vendor/remark/remark.min.js' | relative_url }}">
 </script>
 <script>
   var slideshow = remark.create({
