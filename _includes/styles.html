@@ -1,0 +1,3 @@
+{% for style in page.styles -%}
+  <link rel="stylesheet" type="text/css" href="{{ style | prepend: '/css/' | relative_url }}"/>
+{%- endfor %}

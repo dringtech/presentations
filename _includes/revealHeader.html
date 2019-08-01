@@ -1,7 +1,7 @@
 {% if layout.reveal %}
   {% assign reveal_path = layout.reveal.path %}
-  {% assign theme_prefix = '/css/theme/' | prepend: reveal_path %}
+  {% assign theme_prefix = '/css/theme/' | prepend: reveal_path | relative_url %}
   {% assign theme = layout.reveal.theme %}
-  <link rel="stylesheet" href="{{ '/css/reveal.css' | prepend: reveal_path }}">
+  <link rel="stylesheet" href="{{ '/css/reveal.css' | prepend: reveal_path | relative_url }}">
   <link rel="stylesheet" href="{{ theme | prepend: theme_prefix | append: '.css' }}">
 {% endif %}

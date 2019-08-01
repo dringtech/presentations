@@ -1,7 +1,7 @@
 ---
 layout: default
 reveal:
-  theme: blood
+  theme: solarized
   path: /vendor/reveal.js/
 ---
 
@@ -17,6 +17,7 @@ reveal:
 <script src="{{ 'plugin/markdown/markdown.js' | prepend: reveal_path }}"></script> -->
 <script>
   Reveal.initialize({
+    hash: true,
     dependencies: [
       // Interpret Markdown in <section> elements
       { src: '{{ 'plugin/markdown/marked.js' | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },

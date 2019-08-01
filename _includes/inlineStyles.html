@@ -1,4 +1,4 @@
-{% for style in page.style -%}
+{% for style in page.inlineStyles -%}
   {% assign stylePath = "style/" | append: style -%}
   <style>{% include {{ stylePath }} %}</style>
 {%- endfor %}

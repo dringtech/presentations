@@ -1,5 +1,6 @@
 
 future: true
+permalink: pretty
 
 defaults:
   -
@@ -8,5 +9,3 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       layout: "presentation-remark"
-      style:
-        - presentation.css
