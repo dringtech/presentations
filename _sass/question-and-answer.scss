@@ -1,0 +1,3 @@
+.question::before, .answer::before { font-style: italic;  }
+.question::before { content: 'Q: '; }
+.answer::before { content: 'A: '; }

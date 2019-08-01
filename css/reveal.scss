@@ -1,16 +1,29 @@
 ---
 ---
 
+@import "question-and-answer";
+@import "citations";
+
 .reveal {
   section {
     img {
       border: 0;
     }
   }
+  .slides {
+    @import "images";
+    @import "columns";
+
+    .full-size {
+      padding: 0;
+      & > img {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-column-gap: 0px;
-}
+
+

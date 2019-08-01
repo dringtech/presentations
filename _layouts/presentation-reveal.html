@@ -2,7 +2,20 @@
 layout: default
 reveal:
   theme: solarized
-  path: /vendor/reveal.js/
+  standard_themes:
+    - black
+    - blood
+    - beige
+    - serif
+    - night
+    - white
+    - solarized
+    - moon
+    - simple
+    - league
+    - sky
+  path: /vendor/reveal.js
+  custom_theme_path: /css/reveal.js/
 ---
 
 {% assign reveal_path = layout.reveal.path | relative_url %}
@@ -12,28 +25,31 @@ reveal:
     {{ content }}
   </div>
 </div>
-<script src="{{ 'js/reveal.js' | prepend: reveal_path }}"></script>
-<!-- <script src="{{ 'plugin/markdown/marked.js' | prepend: reveal_path }}"></script>
-<script src="{{ 'plugin/markdown/markdown.js' | prepend: reveal_path }}"></script> -->
+<script src="{{ '/js/reveal.js' | prepend: reveal_path }}"></script>
 <script>
   Reveal.initialize({
     hash: true,
+    markdown: {
+      gfm: true,
+      breaks: false,
+      smartypants: true,
+    },
     dependencies: [
       // Interpret Markdown in <section> elements
-      { src: '{{ 'plugin/markdown/marked.js' | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '{{ 'plugin/markdown/markdown.js' | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '{{ "/plugin/markdown/marked.js" | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '{{ "/plugin/markdown/markdown.js" | prepend: reveal_path }}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 
       // Syntax highlight for <code> elements
-      { src: '{{ 'plugin/highlight/highlight.js' | prepend: reveal_path }}', async: true },
+      { src: '{{ "/plugin/highlight/highlight.js" | prepend: reveal_path }}', async: true },
 
       // Zoom in and out with Alt+click
-      { src: '{{ 'plugin/zoom-js/zoom.js' | prepend: reveal_path }}', async: true },
+      { src: '{{ "/plugin/zoom-js/zoom.js" | prepend: reveal_path }}', async: true },
 
       // Speaker notes
-      { src: '{{ 'plugin/notes/notes.js' | prepend: reveal_path }}', async: true },
+      { src: '{{ "/plugin/notes/notes.js" | prepend: reveal_path }}', async: true },
 
       // MathJax
-      { src: '{{ 'plugin/math/math.js' | prepend: reveal_path }}', async: true }
+      { src: '{{ "/plugin/math/math.js" | prepend: reveal_path }}', async: true }
     ]
   });
 </script>

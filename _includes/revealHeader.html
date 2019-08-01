@@ -1,7 +1,21 @@
 {% if layout.reveal %}
   {% assign reveal_path = layout.reveal.path %}
-  {% assign theme_prefix = '/css/theme/' | prepend: reveal_path | relative_url %}
-  {% assign theme = layout.reveal.theme %}
+  {% assign theme = page.reveal.theme | default: layout.reveal.theme %}
+  {% if layout.reveal.standard_themes contains theme %}
+    {% assign theme_prefix ='/css/theme/' | prepend: reveal_path | relative_url %}
+  {% else %}
+    {% assign theme_prefix = layout.reveal.custom_theme_path | relative_url %}
+  {% endif %}
   <link rel="stylesheet" href="{{ '/css/reveal.css' | prepend: reveal_path | relative_url }}">
+  <link rel="stylesheet" href="{{ '/lib/css/zenburn.css' | prepend: reveal_path | relative_url }}">
   <link rel="stylesheet" href="{{ theme | prepend: theme_prefix | append: '.css' }}">
+
+  <script>
+    var link = document.createElement( 'link' );
+    var printBase = '{{ '/css/print/' | prepend: reveal_path | relative_url }}'
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? printBase + 'pdf.css' : printBase + 'paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
 {% endif %}
